@@ -18,14 +18,14 @@ using PokemonEssentials.Interface.Field;
 using PokemonEssentials.Interface.Screen;
 using PokemonEssentials.Interface.PokeBattle;
 using PokemonEssentials.Interface.PokeBattle.Effects;
-
+using Microsoft.Data.Sqlite;
 namespace PokemonUnity.ConsoleApp
 {
 	class Program
 	{
 		public static void ResetSqlConnection(string db)
 		{
-			Game.con = (System.Data.IDbConnection)new System.Data.SQLite.SQLiteConnection(db);
+			Game.con = new SqliteConnection(db);
 			Game.ResetSqlConnection(db);
 		}
 
